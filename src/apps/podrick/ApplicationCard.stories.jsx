@@ -7,7 +7,6 @@ const meta = {
   title: 'PodRick/ApplicationCard',
   component: ApplicationCard,
   decorators: [PodRickDecorator],
-  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
     backgrounds: { default: 'Dark' },

@@ -8,7 +8,6 @@ export default {
   title: 'Pop!_Portfolio/NotificationBell',
   component: NotificationBell,
   decorators: [PopPortfolioDecorator],
-  tags: ['autodocs'],
 };
 
 export const NoNotifications = {

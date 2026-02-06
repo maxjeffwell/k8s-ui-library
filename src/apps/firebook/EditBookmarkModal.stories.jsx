@@ -7,7 +7,6 @@ const meta = {
   title: 'FireBook/EditBookmarkModal',
   component: EditBookmarkModal,
   decorators: [FireBookModalDecorator],
-  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

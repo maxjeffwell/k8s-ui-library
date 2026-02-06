@@ -7,7 +7,6 @@ const meta = {
   title: 'educationELLy/StudentList',
   component: StudentList,
   decorators: [EducationELLyDecorator],
-  tags: ['autodocs'],
   parameters: { layout: 'fullscreen' },
   args: {
     onEdit: fn(),

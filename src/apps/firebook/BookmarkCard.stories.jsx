@@ -7,7 +7,6 @@ const meta = {
   title: 'FireBook/BookmarkCard',
   component: BookmarkCard,
   decorators: [FireBookCardDecorator],
-  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

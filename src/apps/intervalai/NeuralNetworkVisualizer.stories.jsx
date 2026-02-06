@@ -7,7 +7,6 @@ export default {
   title: 'IntervalAI/NeuralNetworkVisualizer',
   component: NeuralNetworkVisualizer,
   decorators: [IntervalAIDecorator],
-  tags: ['autodocs'],
 };
 
 export const Default = {

@@ -6,7 +6,6 @@ const meta = {
   title: 'TenantFlow/DeploymentControls',
   component: DeploymentControls,
   decorators: [TenantFlowDecorator],
-  tags: ['autodocs'],
   parameters: {
     layout: 'padded',
     backgrounds: { default: 'Dark' },

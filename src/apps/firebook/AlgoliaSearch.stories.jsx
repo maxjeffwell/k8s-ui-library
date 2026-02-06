@@ -9,7 +9,6 @@ const meta = {
   title: 'FireBook/AlgoliaSearch',
   component: AlgoliaSearch,
   decorators: [FireBookModalDecorator],
-  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

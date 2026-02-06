@@ -8,7 +8,6 @@ export default {
   title: 'Code Talk/RoomGrid',
   component: RoomGrid,
   decorators: [CodeTalkGridDecorator],
-  tags: ['autodocs'],
 };
 
 export const Default = {

@@ -7,7 +7,6 @@ const meta = {
   title: 'PodRick/PipelineTimeline',
   component: PipelineTimeline,
   decorators: [PodRickDecorator],
-  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
     backgrounds: { default: 'Dark' },

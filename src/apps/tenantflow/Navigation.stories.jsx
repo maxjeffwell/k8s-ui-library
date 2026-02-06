@@ -14,7 +14,6 @@ const meta = {
       </div>
     ),
   ],
-  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
     backgrounds: { default: 'Dark' },

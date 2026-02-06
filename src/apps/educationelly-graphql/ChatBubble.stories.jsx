@@ -7,7 +7,6 @@ const meta = {
   title: 'educationELLy-GraphQL/ChatBubble',
   component: ChatBubble,
   decorators: [ELLyGraphQLDecorator],
-  tags: ['autodocs'],
   parameters: { layout: 'fullscreen' },
 };
 

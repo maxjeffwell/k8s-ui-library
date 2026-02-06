@@ -6,7 +6,6 @@ const meta = {
   title: 'PodRick/WorkflowCard',
   component: WorkflowCard,
   decorators: [PodRickDecorator],
-  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
     backgrounds: { default: 'Dark' },

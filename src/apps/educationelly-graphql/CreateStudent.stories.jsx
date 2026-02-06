@@ -7,7 +7,6 @@ const meta = {
   title: 'educationELLy-GraphQL/CreateStudent',
   component: CreateStudent,
   decorators: [ELLyGraphQLFormDecorator],
-  tags: ['autodocs'],
   parameters: { layout: 'fullscreen' },
   args: { onSubmit: fn() },
 };

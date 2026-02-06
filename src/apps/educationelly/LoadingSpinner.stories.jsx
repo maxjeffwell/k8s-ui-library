@@ -5,7 +5,6 @@ const meta = {
   title: 'educationELLy/LoadingSpinner',
   component: LoadingSpinner,
   decorators: [EducationELLyDecorator],
-  tags: ['autodocs'],
   parameters: { layout: 'fullscreen' },
 };
 

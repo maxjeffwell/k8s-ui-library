@@ -7,7 +7,6 @@ const meta = {
   title: 'TenantFlow/MetricsCharts',
   component: MetricsCharts,
   decorators: [TenantFlowDarkDecorator],
-  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
     backgrounds: { default: 'Dark' },

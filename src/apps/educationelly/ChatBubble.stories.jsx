@@ -7,7 +7,6 @@ const meta = {
   title: 'educationELLy/ChatBubble',
   component: ChatBubble,
   decorators: [EducationELLyDecorator],
-  tags: ['autodocs'],
   parameters: { layout: 'fullscreen' },
 };
 

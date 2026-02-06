@@ -6,7 +6,6 @@ const meta = {
   title: 'educationELLy/Header',
   component: Header,
   decorators: [EducationELLyDecorator],
-  tags: ['autodocs'],
   parameters: { layout: 'fullscreen' },
   args: { onNavigate: fn() },
 };

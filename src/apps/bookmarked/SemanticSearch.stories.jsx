@@ -7,7 +7,6 @@ const meta = {
   title: 'Bookmarked/SemanticSearch',
   component: SemanticSearch,
   decorators: [BookmarkedDarkDecorator],
-  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

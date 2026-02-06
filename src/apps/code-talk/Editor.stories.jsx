@@ -8,7 +8,6 @@ export default {
   title: 'Code Talk/Editor',
   component: Editor,
   decorators: [CodeTalkEditorDecorator],
-  tags: ['autodocs'],
 };
 
 export const Empty = {

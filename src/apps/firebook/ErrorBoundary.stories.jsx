@@ -20,7 +20,6 @@ const meta = {
   title: 'FireBook/ErrorBoundary',
   component: ErrorBoundary,
   decorators: [FireBookDecorator],
-  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

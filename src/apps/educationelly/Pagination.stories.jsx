@@ -7,7 +7,6 @@ const meta = {
   title: 'educationELLy/Pagination',
   component: Pagination,
   decorators: [EducationELLyDecorator],
-  tags: ['autodocs'],
   parameters: { layout: 'centered' },
   args: {
     onPageChange: fn(),

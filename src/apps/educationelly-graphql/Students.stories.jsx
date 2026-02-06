@@ -7,7 +7,6 @@ const meta = {
   title: 'educationELLy-GraphQL/Students',
   component: Students,
   decorators: [ELLyGraphQLDecorator],
-  tags: ['autodocs'],
   parameters: { layout: 'fullscreen' },
   args: {
     onAddStudent: fn(),

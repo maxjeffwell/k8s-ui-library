@@ -10,7 +10,6 @@ export default {
   title: 'Pop!_Portfolio/Layout',
   component: Layout,
   decorators: [PopPortfolioLayoutDecorator],
-  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

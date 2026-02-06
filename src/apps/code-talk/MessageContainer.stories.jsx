@@ -8,7 +8,6 @@ export default {
   title: 'Code Talk/MessageContainer',
   component: MessageContainer,
   decorators: [CodeTalkDecorator],
-  tags: ['autodocs'],
 };
 
 export const GlobalChat = {

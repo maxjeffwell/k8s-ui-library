@@ -5,7 +5,6 @@ const meta = {
   title: 'Bookmarked/Landing',
   component: Landing,
   decorators: [BookmarkedDecorator],
-  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

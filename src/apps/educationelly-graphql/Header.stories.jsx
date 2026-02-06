@@ -7,7 +7,6 @@ const meta = {
   title: 'educationELLy-GraphQL/Header',
   component: Header,
   decorators: [ELLyGraphQLDecorator],
-  tags: ['autodocs'],
   parameters: { layout: 'fullscreen' },
   args: { onNavigate: fn() },
 };

@@ -6,7 +6,6 @@ const meta = {
   title: 'Bookmarked/Header',
   component: Header,
   decorators: [BookmarkedDecorator],
-  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

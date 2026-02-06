@@ -7,7 +7,6 @@ export default {
   title: 'IntervalAI/StatsDashboard',
   component: StatsDashboard,
   decorators: [IntervalAIDecorator],
-  tags: ['autodocs'],
 };
 
 export const FullDashboard = {

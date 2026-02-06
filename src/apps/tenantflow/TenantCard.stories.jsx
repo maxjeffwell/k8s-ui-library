@@ -11,7 +11,6 @@ const meta = {
   title: 'TenantFlow/TenantCard',
   component: TenantCard,
   decorators: [TenantFlowDecorator],
-  tags: ['autodocs'],
   parameters: {
     layout: 'padded',
     backgrounds: { default: 'Dark' },

@@ -7,7 +7,6 @@ export default {
   title: 'Code Talk/RoomCreate',
   component: RoomCreate,
   decorators: [CodeTalkDecorator],
-  tags: ['autodocs'],
 };
 
 export const Default = {

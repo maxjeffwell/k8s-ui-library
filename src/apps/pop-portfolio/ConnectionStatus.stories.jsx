@@ -6,7 +6,6 @@ export default {
   title: 'Pop!_Portfolio/ConnectionStatus',
   component: ConnectionStatus,
   decorators: [PopPortfolioDecorator],
-  tags: ['autodocs'],
 };
 
 export const Connected = {

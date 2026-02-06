@@ -7,7 +7,6 @@ export default {
   title: 'IntervalAI/MLStatus',
   component: MLStatus,
   decorators: [IntervalAIDecorator],
-  tags: ['autodocs'],
 };
 
 export const WebGPU = {

@@ -7,7 +7,6 @@ const meta = {
   title: 'Bookmarked/BookmarkForm',
   component: BookmarkForm,
   decorators: [BookmarkedFormDecorator],
-  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

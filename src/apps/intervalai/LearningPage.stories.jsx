@@ -8,7 +8,6 @@ export default {
   title: 'IntervalAI/LearningPage',
   component: LearningPage,
   decorators: [IntervalAIFullDecorator],
-  tags: ['autodocs'],
 };
 
 export const QuestionState = {

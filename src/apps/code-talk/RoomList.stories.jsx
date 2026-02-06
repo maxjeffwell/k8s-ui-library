@@ -8,7 +8,6 @@ export default {
   title: 'Code Talk/RoomList',
   component: RoomList,
   decorators: [CodeTalkDecorator],
-  tags: ['autodocs'],
 };
 
 export const Default = {
