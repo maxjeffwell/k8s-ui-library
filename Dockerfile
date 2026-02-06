@@ -14,7 +14,7 @@ FROM node:20-alpine AS build-docs
 
 WORKDIR /app/docs-site
 
-COPY docs-site/package.json docs-site/package-lock.json ./
+COPY docs-site/package.json docs-site/package-lock.json docs-site/.npmrc ./
 RUN npm ci
 
 COPY docs-site/ .
