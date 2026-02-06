@@ -1,0 +1,133 @@
+export const mockBookmarks = {
+  // Basic bookmark with just title, url, rating
+  basic: {
+    id: 'bm-1',
+    title: 'Getting Started with React 19',
+    url: 'https://react.dev/blog/2024/react-19',
+    desc: 'Official React 19 release blog post covering new features like Actions, use() hook, and Server Components.',
+    rating: 4,
+    tags: ['react', 'javascript', 'frontend'],
+    fetched: true,
+    createdAt: new Date('2024-12-15'),
+  },
+
+  // With screenshot and OpenGraph image
+  withScreenshot: {
+    id: 'bm-2',
+    title: 'Tailwind CSS Documentation',
+    url: 'https://tailwindcss.com/docs',
+    desc: 'A utility-first CSS framework packed with classes that can be composed to build any design, directly in your markup.',
+    rating: 5,
+    tags: ['css', 'tailwind', 'frontend', 'design'],
+    screenshot: 'https://picsum.photos/seed/tailwind/600/400',
+    siteName: 'Tailwind CSS',
+    favicon: 'https://tailwindcss.com/favicons/favicon-32x32.png',
+    fetched: true,
+    autoTagged: true,
+    createdAt: new Date('2024-11-20'),
+  },
+
+  // With AI-generated tags and description
+  withAITags: {
+    id: 'bm-3',
+    title: 'Firebase Cloud Functions Best Practices',
+    url: 'https://firebase.google.com/docs/functions/tips',
+    desc: 'Learn best practices for writing Cloud Functions.',
+    rating: 4,
+    tags: ['firebase', 'backend'],
+    suggestedTags: ['serverless', 'cloud-functions', 'google-cloud', 'nodejs'],
+    aiEnhancedTags: ['microservices', 'event-driven', 'FaaS'],
+    aiDescription: 'Comprehensive guide covering performance optimization, error handling, and scaling strategies for Firebase Cloud Functions. Includes tips on cold start mitigation, memory allocation, and timeout configuration.',
+    screenshot: 'https://picsum.photos/seed/firebase/600/400',
+    siteName: 'Firebase',
+    fetched: true,
+    autoTagged: true,
+    aiEnhanced: true,
+    hasEmbedding: true,
+    createdAt: new Date('2024-10-05'),
+  },
+
+  // With errors (metadata + screenshot both failed)
+  withErrors: {
+    id: 'bm-4',
+    title: 'Internal Dev Tool',
+    url: 'https://internal.example.com/dashboard',
+    desc: 'Internal development dashboard',
+    rating: 3,
+    tags: ['tools'],
+    fetched: false,
+    fetchError: 'ECONNREFUSED: Connection refused at internal.example.com',
+    screenshotError: 'Failed to capture screenshot: Navigation timeout',
+    autoTagError: 'Cannot generate tags without metadata',
+    createdAt: new Date('2024-09-12'),
+  },
+
+  // With URL error (DNS resolution failure)
+  withURLError: {
+    id: 'bm-5',
+    title: 'Broken Link Example',
+    url: 'https://nonexistent-domain-xyz.com/page',
+    desc: '',
+    rating: 2,
+    tags: [],
+    fetched: false,
+    fetchError: 'getaddrinfo EAI_AGAIN nonexistent-domain-xyz.com',
+    screenshotError: 'getaddrinfo ENOTFOUND nonexistent-domain-xyz.com',
+    createdAt: new Date('2024-08-01'),
+  },
+
+  // Full-featured bookmark with everything
+  allFeatures: {
+    id: 'bm-6',
+    title: 'MDN Web Docs - JavaScript Reference',
+    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+    desc: 'The JavaScript reference serves as a repository of facts about the JavaScript language.',
+    rating: 5,
+    tags: ['javascript', 'reference', 'documentation', 'mdn'],
+    suggestedTags: ['web-development', 'programming-languages', 'ecmascript'],
+    aiEnhancedTags: ['developer-tools', 'learning-resource', 'standards'],
+    aiDescription: 'The definitive JavaScript language reference from Mozilla. Covers all built-in objects, statements, expressions, operators, and Web APIs. Essential resource for web developers of all levels.',
+    screenshot: 'https://picsum.photos/seed/mdn/600/400',
+    image: 'https://picsum.photos/seed/mdn-og/600/400',
+    siteName: 'MDN Web Docs',
+    favicon: 'https://developer.mozilla.org/favicon-48x48.png',
+    fetched: true,
+    autoTagged: true,
+    aiEnhanced: true,
+    hasEmbedding: true,
+    createdAt: new Date('2024-07-15'),
+  },
+
+  // Bookmark showing "ready to enhance" state (autoTagged but not aiEnhanced)
+  readyToEnhance: {
+    id: 'bm-7',
+    title: 'Kubernetes Documentation',
+    url: 'https://kubernetes.io/docs/home/',
+    desc: 'Kubernetes is an open-source container orchestration platform.',
+    rating: 4,
+    tags: ['kubernetes', 'devops'],
+    suggestedTags: ['containers', 'orchestration', 'cloud-native'],
+    screenshot: 'https://picsum.photos/seed/k8s/600/400',
+    siteName: 'Kubernetes',
+    fetched: true,
+    autoTagged: true,
+    aiEnhanced: false,
+    hasEmbedding: false,
+    createdAt: new Date('2024-06-20'),
+  },
+
+  // With AI enhance error
+  withAIEnhanceError: {
+    id: 'bm-8',
+    title: 'GraphQL Official Site',
+    url: 'https://graphql.org/',
+    desc: 'A query language for your API',
+    rating: 3,
+    tags: ['graphql', 'api'],
+    fetched: true,
+    autoTagged: true,
+    aiEnhanced: false,
+    aiEnhanceError: 'Rate limit exceeded. Please try again later.',
+    createdAt: new Date('2024-05-10'),
+  },
+};

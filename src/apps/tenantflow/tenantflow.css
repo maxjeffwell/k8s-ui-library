@@ -1,0 +1,193 @@
+/* TenantFlow CSS Variables & Base Styles */
+:root {
+  /* TenantFlow color palette */
+  --tf-font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --tf-color-text: #213547;
+  --tf-color-bg: #f5f5f5;
+  --tf-color-accent: #4f46e5;
+  --tf-color-accent-hover: #4338ca;
+  --tf-color-border: #e5e7eb;
+  --tf-color-border-active: #4f46e5;
+  --tf-color-surface: white;
+  --tf-color-surface-alt: #f9fafb;
+  --tf-color-text-heading: #1f2937;
+  --tf-color-text-body: #374151;
+  --tf-color-text-muted: #6b7280;
+  --tf-color-text-faint: #9ca3af;
+
+  /* Status colors */
+  --tf-status-active: #10b981;
+  --tf-status-active-bg: #d1fae5;
+  --tf-status-active-text: #065f46;
+  --tf-status-pending: #f59e0b;
+  --tf-status-pending-bg: #fef3c7;
+  --tf-status-pending-text: #92400e;
+  --tf-status-failed: #ef4444;
+  --tf-status-failed-bg: #fee2e2;
+  --tf-status-failed-text: #991b1b;
+
+  /* Dark theme (metrics/charts) */
+  --tf-dark-bg: #1e293b;
+  --tf-dark-bg-deep: #0f172a;
+  --tf-dark-surface: #1f2937;
+  --tf-dark-surface-deep: #111827;
+  --tf-dark-border: #374151;
+  --tf-dark-text: #e5e7eb;
+  --tf-dark-text-muted: #9ca3af;
+  --tf-dark-text-dim: #6b7280;
+
+  /* Navigation gradient */
+  --tf-nav-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+  /* Chart colors */
+  --tf-chart-blue: #3b82f6;
+  --tf-chart-purple: #8b5cf6;
+  --tf-chart-green: #10b981;
+  --tf-chart-red: #ef4444;
+  --tf-chart-orange: #f59e0b;
+  --tf-chart-gray: #6b7280;
+
+  /* Spacing */
+  --tf-spacing-xs: 0.25rem;
+  --tf-spacing-sm: 0.5rem;
+  --tf-spacing-md: 1rem;
+  --tf-spacing-lg: 1.5rem;
+  --tf-spacing-xl: 2rem;
+
+  /* Border radius */
+  --tf-radius-sm: 6px;
+  --tf-radius-md: 8px;
+  --tf-radius-lg: 12px;
+
+  /* Font sizes */
+  --tf-font-size-xs: 0.75rem;
+  --tf-font-size-sm: 0.875rem;
+  --tf-font-size-md: 1rem;
+  --tf-font-size-lg: 1.25rem;
+  --tf-font-size-xl: 1.5rem;
+  --tf-font-size-2xl: 2rem;
+  --tf-font-size-3xl: 2.5rem;
+}
+
+/* Base resets scoped to TenantFlow */
+.tenantflow-scope * {
+  box-sizing: border-box;
+}
+
+.tenantflow-scope a {
+  font-weight: 500;
+  color: var(--tf-color-accent);
+  text-decoration: inherit;
+}
+
+.tenantflow-scope a:hover {
+  color: var(--tf-color-accent-hover);
+}
+
+.tenantflow-scope button {
+  border-radius: var(--tf-radius-md);
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: var(--tf-font-size-md);
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--tf-color-accent);
+  color: white;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.tenantflow-scope button:hover {
+  background-color: var(--tf-color-accent-hover);
+  transform: translateY(-1px);
+}
+
+.tenantflow-scope button:focus,
+.tenantflow-scope button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Primary button */
+.tenantflow-scope .btn-primary {
+  background-color: var(--tf-color-accent);
+  color: white;
+}
+
+.tenantflow-scope .btn-primary:hover {
+  background-color: var(--tf-color-accent-hover);
+}
+
+.tenantflow-scope .btn-primary:disabled {
+  background-color: var(--tf-color-text-faint);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Secondary button */
+.tenantflow-scope .btn-secondary {
+  background-color: var(--tf-color-surface-alt);
+  color: var(--tf-color-text-body);
+  border: 2px solid var(--tf-color-border);
+}
+
+.tenantflow-scope .btn-secondary:hover {
+  border-color: var(--tf-color-accent);
+  background-color: var(--tf-color-surface);
+}
+
+/* Danger button */
+.tenantflow-scope .btn-danger {
+  background-color: var(--tf-status-failed);
+  color: white;
+}
+
+.tenantflow-scope .btn-danger:hover {
+  background-color: #dc2626;
+}
+
+.tenantflow-scope .btn-danger:disabled {
+  background-color: var(--tf-color-text-faint);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Status badge */
+.tenantflow-scope .status-badge {
+  display: inline-block;
+  padding: var(--tf-spacing-xs) var(--tf-spacing-sm);
+  border-radius: var(--tf-radius-lg);
+  font-size: var(--tf-font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tenantflow-scope .status-badge.active {
+  background-color: var(--tf-status-active-bg);
+  color: var(--tf-status-active-text);
+  border: 1px solid var(--tf-status-active);
+}
+
+.tenantflow-scope .status-badge.pending {
+  background-color: var(--tf-status-pending-bg);
+  color: var(--tf-status-pending-text);
+  border: 1px solid var(--tf-status-pending);
+}
+
+.tenantflow-scope .status-badge.failed,
+.tenantflow-scope .status-badge.error {
+  background-color: var(--tf-status-failed-bg);
+  color: var(--tf-status-failed-text);
+  border: 1px solid var(--tf-status-failed);
+}
+
+/* Error message */
+.tenantflow-scope .error-message {
+  background: var(--tf-status-failed-bg);
+  color: var(--tf-status-failed-text);
+  padding: var(--tf-spacing-md);
+  border-radius: var(--tf-radius-sm);
+  border: 1px solid var(--tf-status-failed);
+  margin-bottom: var(--tf-spacing-md);
+  font-size: var(--tf-font-size-sm);
+}

@@ -1,0 +1,576 @@
+/* Tenant Card */
+.tenant-card {
+  background: var(--tf-color-surface-alt, #f9fafb);
+  border: 2px solid var(--tf-color-border, #e5e7eb);
+  border-radius: var(--tf-radius-md, 8px);
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.tenant-card:hover {
+  border-color: var(--tf-color-accent, #4f46e5);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
+}
+
+.tenant-card.expanded {
+  border-color: var(--tf-color-accent, #4f46e5);
+}
+
+.tenant-card-header {
+  padding: 1.5rem;
+  background: var(--tf-color-surface, white);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tenant-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tenant-info h3 {
+  margin: 0;
+  color: var(--tf-color-text-heading, #1f2937);
+  font-size: 1.25rem;
+}
+
+.tenant-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--tf-color-text-muted, #6b7280);
+  font-size: 0.875rem;
+}
+
+.expand-btn {
+  background: none;
+  border: none;
+  color: var(--tf-color-accent, #4f46e5);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.expand-btn:hover {
+  transform: none;
+}
+
+.tenant-card-body {
+  padding: 1.5rem;
+  border-top: 2px solid var(--tf-color-border, #e5e7eb);
+}
+
+.loading-details {
+  text-align: center;
+  padding: 2rem;
+  color: var(--tf-color-text-muted, #6b7280);
+}
+
+/* Deployments Section */
+.deployments-section,
+.ingress-section,
+.database-section,
+.services-section,
+.metrics-section,
+.pods-section {
+  background: var(--tf-color-surface, white);
+  padding: 1.5rem;
+  border-radius: var(--tf-radius-md, 8px);
+  margin-bottom: 1rem;
+  border: 2px solid var(--tf-color-border, #e5e7eb);
+}
+
+.deployments-section h4,
+.ingress-section h4,
+.database-section h4,
+.services-section h4,
+.metrics-section h4,
+.pods-section h4 {
+  margin-bottom: 1rem;
+  color: var(--tf-color-text-heading, #1f2937);
+}
+
+.deployment-info,
+.service-info {
+  padding: 1rem;
+  background: var(--tf-color-surface-alt, #f9fafb);
+  border-radius: var(--tf-radius-sm, 6px);
+  margin-bottom: 0.5rem;
+}
+
+.deployment-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.deployment-name {
+  font-weight: 600;
+  color: var(--tf-color-text-heading, #1f2937);
+}
+
+.replica-count {
+  color: var(--tf-color-accent, #4f46e5);
+  font-weight: 500;
+}
+
+.deployment-details {
+  font-size: 0.875rem;
+  color: var(--tf-color-text-muted, #6b7280);
+}
+
+/* Services */
+.service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.service-name {
+  font-weight: 600;
+  color: var(--tf-color-text-heading, #1f2937);
+  font-size: 1rem;
+}
+
+.service-type {
+  color: var(--tf-color-text-muted, #6b7280);
+  font-size: 0.875rem;
+}
+
+.service-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.service-ports {
+  color: var(--tf-color-text-muted, #6b7280);
+}
+
+.service-pods {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.pods-label {
+  color: var(--tf-color-text-body, #4b5563);
+  font-weight: 500;
+  margin-right: 0.25rem;
+}
+
+.pod-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid var(--tf-color-border, #e5e7eb);
+}
+
+.pod-badge.running {
+  background: var(--tf-status-active-bg, #d1fae5);
+  color: var(--tf-status-active-text, #065f46);
+  border-color: var(--tf-status-active, #10b981);
+}
+
+.pod-badge.pending {
+  background: var(--tf-status-pending-bg, #fef3c7);
+  color: var(--tf-status-pending-text, #92400e);
+  border-color: var(--tf-status-pending, #f59e0b);
+}
+
+.pod-badge.failed {
+  background: var(--tf-status-failed-bg, #fee2e2);
+  color: var(--tf-status-failed-text, #991b1b);
+  border-color: var(--tf-status-failed, #ef4444);
+}
+
+/* Metrics Grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.metric {
+  padding: 1rem;
+  background: var(--tf-color-surface-alt, #f9fafb);
+  border-radius: var(--tf-radius-sm, 6px);
+  text-align: center;
+}
+
+.metric-label {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--tf-color-text-muted, #6b7280);
+  margin-bottom: 0.5rem;
+}
+
+.tenant-card .metric-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--tf-color-text-heading, #1f2937);
+}
+
+.tenant-card .metric-value.running {
+  color: var(--tf-status-active, #10b981);
+}
+
+.tenant-card .metric-value.pending {
+  color: var(--tf-status-pending, #f59e0b);
+}
+
+.tenant-card .metric-value.failed {
+  color: var(--tf-status-failed, #ef4444);
+}
+
+/* Pods List */
+.pods-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pod-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: var(--tf-color-surface-alt, #f9fafb);
+  border-radius: var(--tf-radius-sm, 6px);
+  font-size: 0.875rem;
+}
+
+.pod-name {
+  flex: 1;
+  color: var(--tf-color-text-heading, #1f2937);
+  font-weight: 500;
+}
+
+.pod-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-weight: 500;
+  margin: 0 0.5rem;
+}
+
+.pod-status.running {
+  background: var(--tf-status-active-bg, #d1fae5);
+  color: var(--tf-status-active-text, #065f46);
+}
+
+.pod-status.pending {
+  background: var(--tf-status-pending-bg, #fef3c7);
+  color: var(--tf-status-pending-text, #92400e);
+}
+
+.pod-status.failed {
+  background: var(--tf-status-failed-bg, #fee2e2);
+  color: var(--tf-status-failed-text, #991b1b);
+}
+
+.pod-restarts {
+  color: var(--tf-color-text-muted, #6b7280);
+}
+
+/* Ingress */
+.ingress-info {
+  padding: 1rem;
+  background: var(--tf-color-surface-alt, #f9fafb);
+  border-radius: var(--tf-radius-sm, 6px);
+  margin-bottom: 0.75rem;
+}
+
+.ingress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ingress-type {
+  font-weight: 600;
+  color: var(--tf-color-text-heading, #1f2937);
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.ingress-url {
+  color: var(--tf-color-accent, #4f46e5);
+  text-decoration: none;
+  font-family: monospace;
+  font-size: 0.875rem;
+  transition: color 0.2s;
+  word-break: break-all;
+}
+
+.ingress-url:hover {
+  color: #6366f1;
+  text-decoration: underline;
+}
+
+/* Database Section */
+.database-info {
+  padding: 1rem;
+  background: var(--tf-color-surface-alt, #f9fafb);
+  border-radius: var(--tf-radius-sm, 6px);
+}
+
+.database-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.database-name {
+  font-weight: 600;
+  color: var(--tf-color-text-heading, #1f2937);
+  font-size: 1rem;
+}
+
+.connection-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.connection-status.connected {
+  background: var(--tf-status-active-bg, #d1fae5);
+  color: var(--tf-status-active-text, #065f46);
+  border: 1px solid var(--tf-status-active, #10b981);
+}
+
+.connection-status.connection_error {
+  background: var(--tf-status-failed-bg, #fee2e2);
+  color: var(--tf-status-failed-text, #991b1b);
+  border: 1px solid var(--tf-status-failed, #ef4444);
+}
+
+.connection-status.no_pods,
+.connection-status.pod_not_running,
+.connection-status.unknown,
+.connection-status.logs_unavailable {
+  background: var(--tf-status-pending-bg, #fef3c7);
+  color: var(--tf-status-pending-text, #92400e);
+  border: 1px solid var(--tf-status-pending, #f59e0b);
+}
+
+.database-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--tf-color-text-muted, #6b7280);
+}
+
+.connection-message {
+  font-style: italic;
+  color: var(--tf-color-text-body, #4b5563);
+}
+
+.database-not-configured {
+  text-align: center;
+  padding: 1rem;
+  color: var(--tf-color-text-muted, #6b7280);
+}
+
+.database-not-configured p {
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.btn-enable-database {
+  margin-top: 0.5rem;
+}
+
+.database-hint {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--tf-color-text-faint, #9ca3af);
+  font-style: italic;
+}
+
+/* Logs Modal */
+.logs-modal {
+  margin-top: 1rem;
+  background: #1f2937;
+  border-radius: var(--tf-radius-md, 8px);
+  overflow: hidden;
+}
+
+.logs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: #374151;
+  border-bottom: 1px solid #4b5563;
+}
+
+.logs-header h4 {
+  margin: 0;
+  color: #f9fafb;
+  font-size: 0.875rem;
+}
+
+.btn-close-logs {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 0.25rem;
+}
+
+.btn-close-logs:hover {
+  color: #f9fafb;
+  transform: none;
+}
+
+.logs-content {
+  padding: 1rem;
+  margin: 0;
+  max-height: 400px;
+  overflow: auto;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #d1d5db;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* Edit Quota Form */
+.edit-quota-form {
+  background: var(--tf-color-surface-alt, #f9fafb);
+  padding: 1.5rem;
+  border-radius: var(--tf-radius-md, 8px);
+  margin-bottom: 1.5rem;
+  border: 2px solid var(--tf-color-accent, #4f46e5);
+}
+
+.edit-quota-form h4 {
+  margin-bottom: 1rem;
+  color: var(--tf-color-text-heading, #1f2937);
+}
+
+.edit-quota-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.edit-quota-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--tf-color-text-body, #374151);
+  font-weight: 500;
+}
+
+.edit-quota-form .form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--tf-color-border, #e5e7eb);
+  border-radius: var(--tf-radius-sm, 6px);
+  font-size: 1rem;
+}
+
+.edit-quota-form .form-input:focus {
+  outline: none;
+  border-color: var(--tf-color-accent, #4f46e5);
+}
+
+.edit-quota-form .form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Tenant Actions */
+.tenant-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--tf-color-border, #e5e7eb);
+}
+
+/* Pod Logs Button */
+.btn-logs {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.btn-logs:hover {
+  background: #2563eb;
+  transform: none;
+}
+
+.btn-logs:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tenant-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .tenant-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .tenant-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .tenant-card-body {
+    padding: 1rem;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pod-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .pod-status {
+    margin: 0;
+  }
+
+  .tenant-actions {
+    flex-direction: column;
+  }
+
+  .tenant-actions button {
+    width: 100%;
+  }
+}

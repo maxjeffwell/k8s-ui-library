@@ -1,0 +1,251 @@
+.pipeline-timeline {
+  position: relative;
+  padding: var(--spacing-gap) 0;
+}
+
+.empty-timeline {
+  text-align: center;
+  padding: 40px var(--spacing-page);
+  color: var(--text-secondary);
+}
+
+.timeline-item {
+  display: flex;
+  gap: 16px;
+  position: relative;
+}
+
+.timeline-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.timeline-dot {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.timeline-dot.completed.success {
+  background: var(--status-healthy);
+}
+
+.timeline-dot.completed.failure {
+  background: var(--status-unhealthy);
+}
+
+.timeline-dot.completed.cancelled {
+  background: var(--text-muted);
+}
+
+.timeline-dot.in_progress,
+.timeline-dot.queued {
+  background: var(--accent-blue);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.timeline-line {
+  width: 2px;
+  flex: 1;
+  background: var(--border-color);
+  margin: 4px 0;
+}
+
+.timeline-content {
+  flex: 1;
+  min-width: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: var(--spacing-card);
+  margin-bottom: var(--spacing-gap);
+  transition: all 0.2s ease;
+}
+
+.timeline-content:hover {
+  border-color: var(--accent-blue);
+  background: var(--bg-hover);
+  transform: translateX(4px);
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+
+.timeline-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.timeline-title h3 {
+  font-size: var(--font-size-body);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  word-break: break-word;
+}
+
+.timeline-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.timeline-badge.success {
+  background: rgba(46, 213, 115, 0.15);
+  color: var(--status-healthy);
+}
+
+.timeline-badge.failure {
+  background: rgba(255, 71, 87, 0.15);
+  color: var(--status-unhealthy);
+}
+
+.timeline-badge.in_progress,
+.timeline-badge.queued {
+  background: rgba(0, 181, 216, 0.15);
+  color: var(--accent-blue);
+}
+
+.timeline-badge.cancelled {
+  background: rgba(128, 128, 128, 0.15);
+  color: var(--text-muted);
+}
+
+.timeline-time {
+  font-size: var(--font-size-small);
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.timeline-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.timeline-meta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.timeline-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-size-small);
+  color: var(--text-secondary);
+}
+
+.meta-icon {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.meta-text {
+  font-family: 'Fira Code', monospace;
+  color: var(--text-secondary);
+  word-break: break-all;
+}
+
+.timeline-duration {
+  font-size: var(--font-size-small);
+  color: var(--text-muted);
+  font-family: 'Fira Code', monospace;
+}
+
+.timeline-link {
+  font-size: var(--font-size-small);
+  color: var(--accent-blue);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s ease;
+}
+
+.timeline-link:hover {
+  color: var(--accent-purple);
+  text-decoration: underline;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .timeline-dot {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .timeline-item {
+    gap: 12px;
+  }
+
+  .timeline-dot {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .timeline-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .timeline-meta {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .timeline-content:hover {
+    transform: none;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .timeline-dot {
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+  }
+
+  .timeline-item {
+    gap: 10px;
+  }
+
+  .timeline-title h3 {
+    font-size: 13px;
+  }
+}

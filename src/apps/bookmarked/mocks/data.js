@@ -1,0 +1,75 @@
+export const mockBookmarks = [
+  {
+    id: '1',
+    title: 'React Hooks Documentation',
+    url: 'https://react.dev/reference/react/hooks',
+    description: 'Official React Hooks API reference covering useState, useEffect, useContext, and more.',
+    rating: 5,
+    checked: true,
+    toggledRadioButton: true,
+    tags: ['react', 'hooks', 'documentation'],
+  },
+  {
+    id: '2',
+    title: 'Emotion Styled Components',
+    url: 'https://emotion.sh/docs/styled',
+    description: 'CSS-in-JS library for writing styled components with template literals.',
+    rating: 4,
+    checked: false,
+    toggledRadioButton: true,
+    tags: ['css', 'emotion', 'styling'],
+  },
+  {
+    id: '3',
+    title: 'PostgreSQL on Neon',
+    url: 'https://neon.tech/docs/introduction',
+    description: 'Serverless PostgreSQL with autoscaling, branching, and bottomless storage.',
+    rating: 4,
+    checked: true,
+    toggledRadioButton: true,
+    tags: ['database', 'postgresql', 'serverless'],
+  },
+  {
+    id: '4',
+    title: 'ArgoCD GitOps',
+    url: 'https://argo-cd.readthedocs.io/',
+    description: 'Declarative continuous delivery for Kubernetes using GitOps.',
+    rating: 3,
+    checked: false,
+    toggledRadioButton: true,
+    tags: ['devops', 'kubernetes', 'gitops'],
+  },
+];
+
+export const mockSemanticResults = [
+  {
+    id: 's1',
+    title: 'React Context API Guide',
+    url: 'https://react.dev/learn/passing-data-deeply-with-context',
+    similarity: 0.94,
+  },
+  {
+    id: 's2',
+    title: 'useReducer vs Redux',
+    url: 'https://blog.example.com/usereducer-vs-redux',
+    similarity: 0.87,
+  },
+  {
+    id: 's3',
+    title: 'Building Custom Hooks',
+    url: 'https://react.dev/learn/reusing-logic-with-custom-hooks',
+    similarity: 0.82,
+  },
+  {
+    id: 's4',
+    title: 'State Management Patterns in React',
+    url: 'https://blog.example.com/state-patterns',
+    similarity: 0.76,
+  },
+  {
+    id: 's5',
+    title: 'React Performance Optimization',
+    url: 'https://react.dev/reference/react/memo',
+    similarity: 0.71,
+  },
+];

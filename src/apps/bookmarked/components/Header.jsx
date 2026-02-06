@@ -1,0 +1,87 @@
+import React, { memo } from 'react';
+import styled from '@emotion/styled';
+
+import * as style from '../Breakpoints';
+
+const StyledHeader = styled.header`
+  grid-row: 1 / 2;
+  grid-column: 1 / 7;
+  background: ${props => props.theme.colors.black};
+  border-bottom: 5px solid ${props => props.theme.colors.secondary};
+  border-radius: 2px;
+  font-family: ${props => props.theme.fonts.primary};
+  color: ${props => props.theme.colors.white};
+  font-size: 2rem;
+  padding-left: 10px;
+  padding-top: 20px;
+  position: relative;
+  text-align: left;
+  z-index: 10;
+  @media (max-width: ${style.breakpoint.tablet}) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 0.5rem;
+    box-sizing: border-box;
+    font-size: 1.5rem;
+  }
+  @media (max-width: ${style.breakpoint.mobileL}) {
+    font-size: 1.25rem;
+  }
+`;
+
+const NavContainer = styled.div`
+  float: right;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  @media (max-width: ${style.breakpoint.tablet}) {
+    float: none;
+    padding-right: 0;
+    gap: 1rem;
+  }
+`;
+
+const StyledNavLink = styled.a`
+  font-family: ${props => props.theme.fonts.primary};
+  font-size: 1.25rem;
+  color: ${props => props.theme.colors.white};
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: ${style.breakpoint.tablet}) {
+    font-size: 1rem;
+  }
+`;
+
+const Header = ({ isAuthenticated = false, currentPath = '/', onLogout, onNavigate }) => {
+  const isBookmarksPage = currentPath === '/bookmarks';
+  const isAuthPage = currentPath === '/login' || currentPath === '/register';
+
+  return (
+    <StyledHeader>
+      <span>{isBookmarksPage && 'Bookmarked'}</span>
+      <NavContainer>
+        {isAuthenticated ? (
+          <>
+            {isBookmarksPage ? (
+              <StyledNavLink href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('/'); }}>Home</StyledNavLink>
+            ) : (
+              <StyledNavLink href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('/bookmarks'); }}>My Bookmarks</StyledNavLink>
+            )}
+            <StyledNavLink href="#" onClick={(e) => { e.preventDefault(); onLogout && onLogout(); }}>Logout</StyledNavLink>
+          </>
+        ) : (
+          !isAuthPage && <StyledNavLink href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('/login'); }}>Sign In</StyledNavLink>
+        )}
+      </NavContainer>
+    </StyledHeader>
+  );
+};
+
+export default memo(Header);
