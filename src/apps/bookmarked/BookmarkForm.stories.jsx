@@ -23,7 +23,7 @@ export const CreateNew = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    await expect(canvas.getByText('Create Bookmark')).toBeInTheDocument();
+    await expect(canvas.getByRole('heading', { name: 'Create Bookmark' })).toBeInTheDocument();
     await expect(canvas.getByPlaceholderText('Title')).toBeInTheDocument();
   },
 };

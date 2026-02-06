@@ -3,6 +3,7 @@ const config = {
   stories: [
     '../src/apps/**/*.stories.@(js|jsx)',
   ],
+  staticDirs: ['../public'],
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-docs',
