@@ -64,10 +64,20 @@ jobs:
     needs: [build-and-push]
     if: github.ref == 'refs/heads/main'
     steps:
+      - name: Install Doppler CLI
+        uses: dopplerhq/cli-action@v3
+
+      - name: Get deploy PAT from Doppler
+        id: doppler
+        env:
+          DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
+        run: |
+          echo "deploy_pat=$(doppler secrets get GH_PAT_WORKFLOW_TRIGGER --plain)" >> $GITHUB_OUTPUT
+
       - name: Trigger K8s deployment
         uses: peter-evans/repository-dispatch@v3
         with:
-          token: ${{ secrets.DEPLOY_PAT }}
+          token: ${{ steps.doppler.outputs.deploy_pat }}
           repository: maxjeffwell/devops-portfolio-manager
           event-type: deploy-k8s-ui-library
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "image_tag": "${{ needs.build-and-push.outputs.image-tag }}", "timestamp": "${{ needs.build-and-push.outputs.image-tag }}"}'
