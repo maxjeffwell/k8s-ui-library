@@ -10,7 +10,7 @@ const config = {
     v4: true,
   },
 
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://showcase.el-jefe.me',
   baseUrl: '/docs/',
 
   onBrokenLinks: 'throw',
