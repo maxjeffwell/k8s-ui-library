@@ -10,6 +10,7 @@ const config = {
     '@storybook/addon-vitest',
     '@storybook/addon-a11y',
     '@storybook/addon-docs',
+    '@storybook/addon-designs',
   ],
   framework: '@storybook/react-vite',
   async viteFinal(config) {
