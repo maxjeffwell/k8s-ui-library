@@ -1,6 +1,7 @@
-import { Meta } from '@storybook/addon-docs/blocks';
-
-<Meta title="PodRick/Overview" />
+---
+title: PodRick
+sidebar_position: 1
+---
 
 # PodRick
 

@@ -1,6 +1,7 @@
-import { Meta } from '@storybook/addon-docs/blocks';
-
-<Meta title="Pop!_Portfolio/Overview" />
+---
+title: "Pop!_Portfolio"
+sidebar_position: 3
+---
 
 # Pop!\_Portfolio
 

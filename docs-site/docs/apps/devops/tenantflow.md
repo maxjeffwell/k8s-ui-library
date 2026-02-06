@@ -1,6 +1,7 @@
-import { Meta } from '@storybook/addon-docs/blocks';
-
-<Meta title="TenantFlow/Overview" />
+---
+title: TenantFlow
+sidebar_position: 2
+---
 
 # TenantFlow
 

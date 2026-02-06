@@ -1,6 +1,7 @@
-import { Meta } from '@storybook/addon-docs/blocks';
-
-<Meta title="Guides/Architecture" />
+---
+title: Component Architecture
+sidebar_position: 1
+---
 
 # Component Architecture
 

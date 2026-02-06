@@ -9,7 +9,10 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "docs": "npm start --prefix docs-site",
+    "docs:build": "npm run build --prefix docs-site",
+    "docs:serve": "npm run serve --prefix docs-site"
   },
   "dependencies": {
     "@apollo/client": "^4.1.4",

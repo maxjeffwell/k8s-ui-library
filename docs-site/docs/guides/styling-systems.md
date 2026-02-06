@@ -1,6 +1,7 @@
-import { Meta } from '@storybook/addon-docs/blocks';
-
-<Meta title="Guides/Styling Systems" />
+---
+title: Styling Systems
+sidebar_position: 2
+---
 
 # Styling Systems
 

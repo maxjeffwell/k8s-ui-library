@@ -1,6 +1,7 @@
-import { Meta } from '@storybook/addon-docs/blocks';
-
-<Meta title="educationELLy-GraphQL/Overview" />
+---
+title: educationELLy-GraphQL
+sidebar_position: 4
+---
 
 # educationELLy-GraphQL
 

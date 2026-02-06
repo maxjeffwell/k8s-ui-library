@@ -1,6 +1,7 @@
-import { Meta, Canvas } from '@storybook/addon-docs/blocks';
-
-<Meta title="Bookmarked/Overview" />
+---
+title: Bookmarked
+sidebar_position: 2
+---
 
 # Bookmarked
 

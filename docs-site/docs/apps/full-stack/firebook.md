@@ -1,6 +1,7 @@
-import { Meta } from '@storybook/addon-docs/blocks';
-
-<Meta title="FireBook/Overview" />
+---
+title: FireBook
+sidebar_position: 1
+---
 
 # FireBook
 

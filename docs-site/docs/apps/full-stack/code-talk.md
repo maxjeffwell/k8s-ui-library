@@ -1,6 +1,7 @@
-import { Meta } from '@storybook/addon-docs/blocks';
-
-<Meta title="Code Talk/Overview" />
+---
+title: Code Talk
+sidebar_position: 5
+---
 
 # Code Talk
 

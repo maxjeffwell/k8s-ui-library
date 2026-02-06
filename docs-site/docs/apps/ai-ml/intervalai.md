@@ -1,6 +1,7 @@
-import { Meta } from '@storybook/addon-docs/blocks';
-
-<Meta title="IntervalAI/Overview" />
+---
+title: IntervalAI
+sidebar_position: 1
+---
 
 # IntervalAI
 
