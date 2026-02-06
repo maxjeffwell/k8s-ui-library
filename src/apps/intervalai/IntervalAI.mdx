@@ -1,0 +1,39 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="IntervalAI/Overview" />
+
+# IntervalAI
+
+Neural-enhanced spaced repetition — TensorFlow.js ML models, D3 neural network visualization, and adaptive learning algorithms.
+
+## Stack
+
+- **React 18** with pure inline CSS
+- **Redux Toolkit** for state management
+- **TensorFlow.js** for client-side ML inference
+- **D3.js** for neural network visualization
+
+## Components
+
+| Component | Stories | Description |
+|-----------|---------|-------------|
+| **NeuralNetworkVisualizer** | Default, HighActivation, LowActivation | D3-rendered neural network diagram showing layer activations across 51 input features |
+| **StatsDashboard** | FullDashboard, ComparisonOnly, ProgressOnly | Performance dashboard comparing baseline vs ML model (MAE, accuracy, retention) |
+| **LearningPage** | QuestionState, CorrectFeedback, IncorrectFeedback, SubmitAnswer | Spaced repetition study interface with adaptive feedback |
+| **MLStatus** | WebGPU, WebGL, Loading | ML backend status indicator (WebGPU vs WebGL fallback) |
+
+## Styling
+
+Dark terminal aesthetic with no CSS framework — all inline styles:
+- Background: `#0a0e27` (deep navy)
+- Accent: `#00ff41` (terminal green)
+- Font: Courier New / Fira Code monospace
+
+## ML Architecture
+
+The neural network visualizer renders a 4-layer network:
+- **Input layer**: 51 features (repetition count, time since review, difficulty, etc.)
+- **Hidden layers**: Activation values visualized as node opacity
+- **Output layer**: Predicted optimal review interval
+
+Mock data includes realistic activation matrices for high and low confidence predictions.

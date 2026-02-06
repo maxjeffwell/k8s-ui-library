@@ -1,0 +1,45 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="TenantFlow/Overview" />
+
+# TenantFlow
+
+Kubernetes multi-tenant platform — manage tenants, deployments, quotas, and topology across a K8s cluster.
+
+## Stack
+
+- **React 19** with pure CSS and CSS variables
+- **Chart.js** via react-chartjs-2 for metrics visualization
+- **Kubernetes API** for tenant and deployment management
+
+## Components
+
+| Component | Stories | Description |
+|-----------|---------|-------------|
+| **TenantCard** | Collapsed, ExpandedWithDetails, WithDeploymentsRunning, WithDatabaseEnabled, Loading, PendingStatus, FailedStatus, NoDeployments, DatabaseNotConfigured, ToggleInteraction, DeleteInteraction | Expandable tenant cards showing status, deployments, database config, and pod health |
+| **MetricsCharts** | WithFullMetrics, DegradedMetrics, LoadingState, ErrorState, SummaryOnly, NoMetrics | Chart.js dashboards for availability, latency, error rates, and quota usage |
+| **DeploymentControls** | Default, WithLockedAppType, LockedCodeTalk, LockedBookmarked, DeployInteraction, DeployError | Deployment form with app type selection, locking, and deploy actions |
+| **Navigation** | DashboardActive, AnalyticsActive, NavigationInteraction | Sidebar navigation with active state highlighting |
+
+## Styling
+
+Pure CSS with light and dark themes via CSS variables:
+- Light: `#f5f5f5` background, `#213547` text
+- Dark decorator: gradient from `#1e293b` to `#0f172a`
+- System font stack
+
+## Tenant Lifecycle
+
+TenantCard stories cover the full tenant state machine:
+1. **PendingStatus** → **Collapsed** (active) → **ExpandedWithDetails**
+2. **FailedStatus** — Error state with retry option
+3. **WithDeploymentsRunning** — Active pods and services
+4. **WithDatabaseEnabled** — PostgreSQL/MongoDB config attached
+5. **DeleteInteraction** — Confirmation dialog and teardown
+
+## Interaction Tests
+
+- **TenantCard/ToggleInteraction** — Expands and collapses the card, verifies detail visibility
+- **TenantCard/DeleteInteraction** — Clicks delete, confirms in dialog
+- **DeploymentControls/DeployInteraction** — Selects app type and deploys
+- **Navigation/NavigationInteraction** — Clicks nav items and verifies active state

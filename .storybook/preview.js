@@ -7,9 +7,7 @@ const preview = {
         date: /Date$/i,
       },
     },
-    a11y: {
-      test: 'todo',
-    },
+    a11y: {},
     layout: 'centered',
     viewport: {
       viewports: {

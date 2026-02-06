@@ -13,6 +13,13 @@ const config = {
     '@storybook/addon-designs',
   ],
   framework: '@storybook/react-vite',
+
+  refs: {
+    portfolio: {
+      title: 'Portfolio Components',
+      url: 'https://el-jefe.me/storybook',
+    },
+  },
   async viteFinal(config) {
     // Use esbuild for CSS minification instead of LightningCSS.
     // Semantic UI CSS 2.5.0 contains pseudo-element syntax that

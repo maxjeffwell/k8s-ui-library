@@ -1,0 +1,38 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="FireBook/Overview" />
+
+# FireBook
+
+AI-powered bookmark manager — auto-tagging, semantic search, AI descriptions, and similar bookmark discovery powered by Firebase Cloud Functions.
+
+## Stack
+
+- **React 19** with Tailwind CSS v4
+- **Firebase** (Firestore, Cloud Functions, Auth)
+- **Algolia** for full-text search
+- **AI/ML** for auto-tagging and description generation
+
+## Components
+
+| Component | Stories | Description |
+|-----------|---------|-------------|
+| **BookmarkCard** | Basic, WithScreenshot, WithAITags, WithErrors, WithURLError, AllFeatures, ReadyToEnhance, WithAIEnhanceError | Feature-rich card showing bookmarks in various states — screenshots, AI tags, error states, enhancement readiness |
+| **AlgoliaSearch** | NotConfigured, WithResults, SearchFiltering, NoResults | Algolia-powered search with instant results |
+| **EditBookmarkModal** | Default, EditTitle, EmptyBookmark | Modal for editing bookmark details |
+| **ErrorBoundary** | CaughtError, WithTechnicalDetails, CustomFallback, NoError | React error boundary with expandable technical details |
+
+## Styling
+
+Tailwind CSS v4 with a gradient purple aesthetic:
+- Background: `linear-gradient(135deg, #667eea, #764ba2)`
+- Inter font family
+- Utility classes scoped via `firebook.css`
+
+## AI Features Showcased
+
+The BookmarkCard stories demonstrate the full AI pipeline:
+1. **ReadyToEnhance** — Bookmark awaiting AI processing
+2. **WithAITags** — Auto-generated tags from content analysis
+3. **WithAIEnhanceError** — Graceful degradation when AI fails
+4. **AllFeatures** — Screenshot, AI tags, metadata, and embeddings all present

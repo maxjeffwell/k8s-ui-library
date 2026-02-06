@@ -1,0 +1,36 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="educationELLy-GraphQL/Overview" />
+
+# educationELLy-GraphQL
+
+GraphQL-powered education platform — Apollo Client with real-time queries, mutations, and student management.
+
+## Stack
+
+- **React 18** with styled-components + Semantic UI CSS
+- **Apollo Client 4** with GraphQL queries and mutations
+- **Express + GraphQL** backend
+
+## Components
+
+| Component | Stories | Description |
+|-----------|---------|-------------|
+| **Header** | Authenticated, Unauthenticated | Auth-aware navigation header |
+| **Students** | WithStudents, SearchFiltering, Empty | Student list with real-time search filtering |
+| **CreateStudent** | NewStudent, EditExisting, FillForm | Student creation/edit form with GraphQL-formatted fields |
+| **ChatBubble** | Closed, OpenEmpty, WithConversation | AI assistant focused on reclassification guidance |
+
+## How It Differs from educationELLy
+
+This is a **GraphQL rewrite** of the educationELLy app. Key differences:
+
+- Data uses `_id` (MongoDB) instead of numeric `id`
+- Students include `nativeLanguage` and `countryOfBirth` fields
+- Chat assistant focuses on reclassification criteria
+- No pagination component — replaced by client-side search filtering
+
+## Interaction Tests
+
+- **CreateStudent/FillForm** — Fills all student fields and submits
+- **Students/SearchFiltering** — Types a search query and verifies filtered results
