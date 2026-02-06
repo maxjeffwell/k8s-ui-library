@@ -1,4 +1,3 @@
-import { Meta } from '@storybook/addon-docs/blocks';
 import NeuralNetworkVisualizer from './components/NeuralNetworkVisualizer';
 import { IntervalAIDecorator } from './decorators';
 import { mockActivations, mockFeatureNames } from './mocks/data';

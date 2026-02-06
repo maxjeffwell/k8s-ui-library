@@ -1,5 +1,4 @@
 import { fn, expect, userEvent, within } from 'storybook/test';
-import { Meta } from '@storybook/addon-docs/blocks';
 import NotificationBell from './components/NotificationBell';
 import { PopPortfolioDecorator } from './decorators';
 import { mockNotifications } from './mocks/data';

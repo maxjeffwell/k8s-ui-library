@@ -1,4 +1,3 @@
-import { Meta } from '@storybook/addon-docs/blocks';
 import StatsDashboard from './components/StatsDashboard';
 import { IntervalAIDecorator } from './decorators';
 import { mockComparisonData, mockProgressData } from './mocks/data';

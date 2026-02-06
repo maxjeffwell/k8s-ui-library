@@ -1,5 +1,4 @@
 import { fn } from 'storybook/test';
-import { Meta } from '@storybook/addon-docs/blocks';
 import RoomGrid from './components/RoomGrid';
 import { CodeTalkGridDecorator } from './decorators';
 import { mockMessages, mockCode } from './mocks/data';

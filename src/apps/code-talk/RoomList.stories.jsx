@@ -1,5 +1,4 @@
 import { fn, expect, userEvent, within } from 'storybook/test';
-import { Meta } from '@storybook/addon-docs/blocks';
 import RoomList from './components/RoomList';
 import { CodeTalkDecorator } from './decorators';
 import { mockRooms } from './mocks/data';

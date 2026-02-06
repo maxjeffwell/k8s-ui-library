@@ -1,5 +1,4 @@
 import { fn, expect, userEvent, within } from 'storybook/test';
-import { Meta } from '@storybook/addon-docs/blocks';
 import LearningPage from './components/LearningPage';
 import { IntervalAIFullDecorator } from './decorators';
 import { mockQuestion, mockStats, mockMLInfo, mockFeedback } from './mocks/data';

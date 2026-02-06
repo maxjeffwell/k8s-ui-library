@@ -1,4 +1,3 @@
-import { Meta } from '@storybook/addon-docs/blocks';
 import ConnectionStatus from './components/ConnectionStatus';
 import { PopPortfolioDecorator } from './decorators';
 

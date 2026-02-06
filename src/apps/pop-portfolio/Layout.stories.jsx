@@ -1,5 +1,4 @@
 import { fn, expect, userEvent, within } from 'storybook/test';
-import { Meta } from '@storybook/addon-docs/blocks';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Layout from './components/Layout';
