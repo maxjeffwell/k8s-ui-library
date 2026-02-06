@@ -1,5 +1,5 @@
-# Stage 1: Build
-FROM node:20-alpine AS build
+# Stage 1: Build Storybook
+FROM node:20-alpine AS build-storybook
 
 WORKDIR /app
 
@@ -9,7 +9,18 @@ RUN npm ci
 COPY . .
 RUN npm run build-storybook
 
-# Stage 2: Serve
+# Stage 2: Build Docusaurus
+FROM node:20-alpine AS build-docs
+
+WORKDIR /app/docs-site
+
+COPY docs-site/package.json docs-site/package-lock.json ./
+RUN npm ci
+
+COPY docs-site/ .
+RUN npm run build
+
+# Stage 3: Serve
 FROM nginx:alpine AS production
 
 # Remove default nginx config
@@ -19,7 +30,10 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copy built storybook
-COPY --from=build /app/storybook-static /usr/share/nginx/html
+COPY --from=build-storybook /app/storybook-static /usr/share/nginx/html
+
+# Copy built docusaurus under /docs
+COPY --from=build-docs /app/docs-site/build /usr/share/nginx/html/docs
 
 # Expose port
 EXPOSE 80

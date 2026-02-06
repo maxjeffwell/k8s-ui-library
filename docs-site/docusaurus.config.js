@@ -11,7 +11,7 @@ const config = {
   },
 
   url: 'https://your-docusaurus-site.example.com',
-  baseUrl: '/',
+  baseUrl: '/docs/',
 
   onBrokenLinks: 'throw',
 
