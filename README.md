@@ -1,16 +1,82 @@
-# React + Vite
+# K8s UI Library
 
-This project provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Component library and design system showcasing **9 full-stack applications** deployed on a K3s Kubernetes cluster. Built with Storybook 10, React 19, and comprehensive interaction testing.
 
-Currently, two official plugins are available:
+**Live:** [showcase.el-jefe.me](https://showcase.el-jefe.me) | **Docs:** [showcase.el-jefe.me/docs](https://showcase.el-jefe.me/docs/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Applications
 
-## React Compiler
+Each application module includes fully documented components with interaction tests, accessibility checks, and multiple state variants.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| App | Components | Key Patterns |
+|:----|:-----------|:-------------|
+| **PodRick** | ApplicationCard, SyncButton | K8s health status, ArgoCD sync |
+| **TenantFlow** | DeploymentControls, TenantSelector | Multi-tenant deploys, form validation |
+| **Bookmarked** | BookmarkCard, SearchBar | pgvector search, tag management |
+| **Code Talk** | MessageContainer, RoomGrid | Real-time chat, room management |
+| **educationELLy** | StudentForm, ChatBubble | CRUD forms, GraphQL integration |
+| **educationELLy GraphQL** | CreateStudent, StudentList | Apollo Client, mutation handling |
+| **IntervalAI** | MLStatusDisplay, NeuralViz | WebGPU/WebGL detection, ML metrics |
+| **FireBook** | EditBookmarkModal, BookmarkCard | Firebase CRUD, Algolia search |
+| **Portfolio** | ProjectCard, Header | Gatsby patterns, responsive grid |
 
-## ESLint configuration
+## Tech Stack
 
-The ESLint configuration is set up for JavaScript and React. If you want to expand it with more React-specific rules, you can install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom).
+- **Storybook 10** with Vitest integration, a11y addon, Chromatic, Apollo & Redux addons
+- **React 19** with Material UI 7, Emotion, Styled Components, Tailwind CSS 4
+- **Vite** with Rolldown build system and SWC Fast Refresh
+- **Testing** — Vitest + Playwright browser testing, 37 story files with interaction tests
+- **Docusaurus 3** documentation site served alongside Storybook
+
+## Development
+
+```bash
+npm install
+
+# Storybook (port 6006)
+npm run storybook
+
+# Docusaurus docs
+npm run docs
+
+# Vite dev server
+npm run dev
+```
+
+## Project Structure
+
+```
+src/apps/
+├── bookmarked/          # Bookmark management components
+├── code-talk/           # Real-time code collaboration
+├── educationelly/       # Educational platform (REST)
+├── educationelly-graphql/ # Educational platform (GraphQL)
+├── firebook/            # Firebase bookmark management
+├── intervalai/          # ML status and visualization
+├── podrick/             # K8s ArgoCD management
+├── pop-portfolio/       # Portfolio showcase
+└── tenantflow/          # Multi-tenant deployment
+
+.storybook/              # Storybook 10 config (8 addons)
+docs-site/               # Docusaurus v3 documentation
+```
+
+## Build & Deployment
+
+Multi-stage Docker build serving both Storybook and Docusaurus via Nginx:
+
+```bash
+docker build -t k8s-ui-library .
+```
+
+**CI/CD:** GitHub Actions builds on push to `main`, pushes to Docker Hub (`maxjeffwell/k8s-ui-library-storybook`), and triggers ArgoCD sync to the K3s cluster.
+
+**Nginx** serves Storybook at `/` and Docusaurus at `/docs/`, with gzip compression, security headers, CORS for `el-jefe.me`, and static asset caching.
+
+## Storybook Configuration
+
+- **Framework:** `@storybook/react-vite`
+- **Addons:** A11y, Docs, Vitest, Designs, Chromatic, Pseudo States, Apollo Client, Redux Store
+- **Viewports:** Mobile (375×812), Tablet (768×1024), Desktop (1440×900)
+- **Backgrounds:** Dark, Light, K8s Dark
+- **React 19:** `findDOMNode` polyfill for Semantic UI compatibility
