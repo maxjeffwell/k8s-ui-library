@@ -20,6 +20,7 @@ const config = {
     portfolio: {
       title: 'Portfolio Components',
       url: 'https://el-jefe.me/storybook',
+      type: 'server-checked',
     },
   },
   async viteFinal(config) {
