@@ -1,5 +1,5 @@
 # Stage 1: Build Storybook
-FROM node:20-alpine AS build-storybook
+FROM node:24-alpine AS build-storybook
 
 WORKDIR /app
 
@@ -10,7 +10,7 @@ COPY . .
 RUN npm run build-storybook
 
 # Stage 2: Build Docusaurus
-FROM node:20-alpine AS build-docs
+FROM node:24-alpine AS build-docs
 
 WORKDIR /app/docs-site
 
